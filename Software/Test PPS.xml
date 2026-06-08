@@ -1,0 +1,55 @@
+<aardvark>
+    <!-- TEST PPS Mode -->
+
+    <configure i2c="1" spi="1" gpio="0" tpower="1" pullups="1"/>
+    <i2c_bitrate khz="100"/>
+    <i2c_read addr="0x22" count="2"/>
+
+    <!-- Go to Default 5V -->
+    <i2c_write addr="0x22" count="2" radix="16">0A 00</i2c_write>
+    <i2c_write addr="0x22" count="1" radix="16" nonstop="1">09 </i2c_write>
+    <i2c_read addr="0x22" count="2"/>
+
+    <!-- Wait in Default -->
+    <sleep ms="3000"/>
+
+    <!-- Set New Voltage -->
+    <i2c_write addr="0x22" count="2" radix="16">53 3C</i2c_write>
+
+    <!-- Switch ON PPS -->
+    <i2c_write addr="0x22" count="2" radix="16">0A 06</i2c_write>
+    <sleep ms="1000"/>
+
+    <!-- Go through Voltages -->
+    <i2c_write addr="0x22" count="2" radix="16">53 46</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 50</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 5A</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 64</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 6E</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 78</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 82</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 8C</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 96</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 A0</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 AA</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 B4</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 BE</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 C8</i2c_write>
+    <sleep ms="1000"/>
+    <i2c_write addr="0x22" count="2" radix="16">53 43</i2c_write>
+    <sleep ms="1000"/>
+
+</aardvark>
